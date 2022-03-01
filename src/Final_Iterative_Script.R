@@ -1,7 +1,7 @@
 library(ggplot2)
 
 #Reading in the CSVs and removing the Null Row
-precipCSV_m <- read.csv("C://Users//Madyson//OneDrive - Texas A&M University//Documents//GEOG476//Data Collection//Lane_Annual_Precip_Meters.csv")
+precipCSV_m <- read.csv("./files/Lane_Annual_Precip_Meters.csv")
 precipCSV_m <- precipCSV_m[-c(14),]   # remove row 14
 
 
@@ -178,13 +178,13 @@ sustainability_yearly
 
 # Adds All Results to One Table
 Results <- cbind(year,water_table_height_yearly,population_yearly,shelter_yearly,precipitation_yearly,water_index_yearly,pop_index_yearly,sustainability_yearly)
-write.csv(Results,"C://Users//Madyson//OneDrive - Texas A&M University//Documents//GEOG476//Data Collection//Results.csv", row.names = TRUE)
+write.csv(Results,"./files/Results.csv", row.names = TRUE)
 
 ########################
 ### GRAPHING RESULTS ###
 ########################
 
-ResultCSV <- read.csv("C://Users//Madyson//OneDrive - Texas A&M University//Documents//GEOG476//Data Collection//Results.csv")
+ResultCSV <- read.csv("./files/Results.csv")
 
 # WATER TABLE OVER 50 YEAR PERIOD
 ggplot(ResultCSV, aes(x=year, y=water_table_height_yearly))+ geom_line(size = 1, color="blue")+
